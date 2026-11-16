@@ -1,0 +1,638 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff0f5">
+  <title>For Jana ♡</title>
+  <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Marhey:wght@400;500;600;700&family=Lemonada:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(145deg, #fff0f6, #fbd3e5, #fff4f8);
+  color: #713653;
+  font-family: 'Playfair Display', 'Lemonada', serif;
+  overflow-x: hidden;
+}
+
+#app {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.hero,
+.page-section {
+  min-height: 100vh;
+  padding: 35px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.hero {
+  background:
+    radial-gradient(circle at 15% 20%, #ffffffa8 0 3px, transparent 4px),
+    radial-gradient(circle at 85% 75%, #ffffffa8 0 3px, transparent 4px);
+}
+
+.sparkle {
+  color: #c65b91;
+  font-size: 55px;
+  margin-bottom: 12px;
+  animation: sparkle 2.5s infinite ease-in-out;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: #a65b7f;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(42px, 10vw, 68px);
+  line-height: 1.15;
+  color: #713653;
+  margin-bottom: 20px;
+}
+
+.hero h1 span {
+  color: #c34f87;
+  font-style: italic;
+}
+
+.subtitle {
+  font-family: 'Lemonada', cursive;
+  font-size: 14px;
+  margin-bottom: 30px;
+  color: #95617b;
+}
+
+.date {
+  margin-top: 22px;
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: #a65b7f;
+}
+
+button {
+  border: none;
+  border-radius: 40px;
+  padding: 15px 28px;
+  background: linear-gradient(135deg, #d76b9e, #a83e75);
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 8px 22px #b84c7b40;
+  transition: transform .25s, box-shadow .25s;
+}
+
+button:active {
+  transform: scale(.96);
+}
+
+button:hover {
+  box-shadow: 0 10px 28px #b84c7b60;
+}
+
+.page-section {
+  animation: appear .8s ease both;
+}
+
+.section-title {
+  font-family: 'Marhey', cursive;
+  font-size: clamp(27px, 7vw, 39px);
+  color: #a43d70;
+  margin-bottom: 12px;
+}
+
+.section-subtitle {
+  font-family: 'Lemonada', cursive;
+  color: #98627d;
+  font-size: 12px;
+  margin-bottom: 25px;
+}
+
+.letter-card {
+  width: min(100%, 650px);
+  padding: clamp(22px, 5vw, 38px);
+  border: 1px solid #ffffffc9;
+  border-radius: 25px;
+  background: #fff9fcdd;
+  box-shadow: 0 15px 45px #9f416b1c;
+  position: relative;
+}
+
+.letter-heading {
+  font-family: 'Marhey', cursive;
+  font-size: 27px;
+  color: #a43d70;
+  margin-bottom: 18px;
+}
+
+.letter-text {
+  font-family: 'Lemonada', cursive;
+  font-size: clamp(14px, 3.6vw, 17px);
+  line-height: 2.25;
+  color: #63364e;
+  text-align: right;
+  direction: rtl;
+  white-space: pre-line;
+}
+
+.letter-footer {
+  margin-top: 22px;
+  color: #c35b8d;
+  font-size: 23px;
+}
+
+.action-button {
+  margin-top: 25px;
+  font-family: 'Lemonada', cursive;
+}
+
+/* FLOWER GARDEN */
+
+.garden-section {
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 100%, #f8c6dc 0%, transparent 55%),
+    linear-gradient(180deg, #fff2f7, #fce1ed);
+}
+
+.garden-decor {
+  font-size: 25px;
+  letter-spacing: 10px;
+  margin: 5px 0 22px;
+  animation: floatDecor 4s ease-in-out infinite;
+}
+
+.garden-intro {
+  max-width: 420px;
+  font-family: 'Lemonada', cursive;
+  font-size: 13px;
+  line-height: 2;
+  color: #98627d;
+  margin-bottom: 30px;
+}
+
+.envelope-grid {
+  width: min(100%, 720px);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  align-items: center;
+}
+
+.envelope {
+  min-width: 0;
+  background: #fff9fc;
+  border: 1px solid #f4c8dc;
+  border-radius: 20px;
+  padding: 18px 10px 16px;
+  color: #a43d70;
+  box-shadow: 0 12px 28px #a8437220;
+  cursor: pointer;
+  transition: transform .3s, box-shadow .3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+}
+
+.envelope:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 17px 32px #a8437230;
+}
+
+.envelope-icon {
+  width: 75px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  font-size: 43px;
+  background: #fce0ec;
+  border-radius: 13px;
+}
+
+.envelope-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.envelope-caption {
+  font-family: 'Lemonada', cursive;
+  font-size: 10px;
+  color: #a6788f;
+}
+
+.envelope.opened {
+  background: #fceaf2;
+  border-color: #d98bad;
+}
+
+.envelope.opened .envelope-icon {
+  background: #f7d1e2;
+}
+
+.garden-bottom {
+  margin-top: 35px;
+  font-size: 25px;
+  letter-spacing: 12px;
+}
+
+.garden-progress {
+  font-family: 'Lemonada', cursive;
+  font-size: 11px;
+  color: #a6788f;
+  margin-top: 17px;
+}
+
+/* OPENED LETTER */
+
+.opened-letter {
+  width: min(100%, 620px);
+  padding: clamp(24px, 5vw, 40px);
+  background: #fffafd;
+  border: 1px solid #f3c5d9;
+  border-radius: 25px;
+  box-shadow: 0 18px 45px #9f416b20;
+  animation: letterOpen .6s ease both;
+}
+
+.opened-letter .letter-heading {
+  text-align: center;
+}
+
+.opened-letter .letter-text {
+  font-size: clamp(14px, 3.5vw, 16px);
+}
+
+.close-letter {
+  margin-top: 25px;
+}
+
+.final-garden-message {
+  margin-top: 25px;
+  font-family: 'Lemonada', cursive;
+  font-size: 14px;
+  line-height: 2;
+  color: #a43d70;
+  max-width: 450px;
+}
+
+/* FINAL SCREEN */
+
+.final-section {
+  overflow: hidden;
+}
+
+.final-title {
+  font-family: 'Marhey', cursive;
+  font-size: clamp(32px, 8vw, 48px);
+  color: #a43d70;
+  margin-bottom: 18px;
+}
+
+.final-message {
+  max-width: 520px;
+  font-family: 'Lemonada', cursive;
+  font-size: 16px;
+  line-height: 2.2;
+  color: #713653;
+  direction: rtl;
+}
+
+.heart {
+  position: fixed;
+  bottom: -30px;
+  color: #d75e98;
+  pointer-events: none;
+  animation: floatUp 5s linear forwards;
+  z-index: 10;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% { transform: scale(1) rotate(0); }
+  50% { transform: scale(1.15) rotate(12deg); }
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-110vh) rotate(30deg);
+    opacity: 0;
+  }
+}
+
+@keyframes floatDecor {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+
+@keyframes letterOpen {
+  from {
+    opacity: 0;
+    transform: scale(.92) translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .envelope-grid {
+    gap: 8px;
+  }
+
+  .envelope {
+    padding: 14px 5px;
+    border-radius: 15px;
+  }
+
+  .envelope-icon {
+    width: 58px;
+    height: 50px;
+    font-size: 34px;
+  }
+
+  .envelope-title {
+    font-size: 11px;
+  }
+
+  .envelope-caption {
+    font-size: 9px;
+  }
+
+  .letter-card {
+    padding: 22px 17px;
+  }
+
+  .letter-text {
+    line-height: 2.15;
+  }
+
+  .garden-intro {
+    margin-bottom: 22px;
+  }
+}
+
+</style>
+</head>
+<body>
+
+  <main id="app">
+    <section class="hero">
+      <div class="sparkle">✦</div>
+      <p class="eyebrow">A LITTLE SOMETHING FOR YOU</p>
+      <h1>Happy Birthday,<br><span>Jana</span></h1>
+      <p class="subtitle">A little world made just for you.</p>
+      <button id="openBtn">Open your surprise ♡</button>
+      <p class="date">November 25</p>
+    </section>
+  </main>
+
+  <script>
+
+const app = document.getElementById("app");
+
+const mainMessage = `في حاجات كتير ممكن الواحد يعدّي عليها في يومه وينساها، بس في أشخاص بيكون ليهم طريقة غريبة في إنهم يفضلوا في باله حتى من غير ما يعملوا حاجة. وإنتِ من الناس دي بالنسبالي. بحب تفاصيلك اللي يمكن إنتِ نفسك مش واخدة بالك منها، وطريقتك في الكلام، وردود فعلك، وحتى الحاجات الصغيرة اللي بتحكيهالي. مش لازم كل يوم يكون فيه كلام كبير أو لحظات مميزة، ساعات مجرد كلام عادي معاكي بيكون كفاية إنه يخلّي يومي أحسن. وكل اللي عايز أقوله إن وجودك فارق معايا، وإنك مش شخص عادي بالنسبالي.`;
+
+const letters = [
+  {
+    title: "A Little Wish",
+    icon: "🌷",
+    caption: "A wish for you",
+    heading: "أمنية صغيرة ليكي ♡",
+    text: `عارف إن عيد ميلادك مش هيغيّر كل حاجة فجأة، وإن بعده هترجعي لنفس يومك العادي، نفس الحاجات اللي وراكي ونفس التفاصيل الصغيرة. بس بجد أتمنى السنة دي تكون أحنّ عليكي، تلاقي فيها حاجات كنتِ مستنياها تحصل، وتوصلي لحاجات تعبتي عشانها. أتمنى تضحكي كتير، ومتضطريش تكدّري نفسك عشان حاجات متستاهلش، وكل مرة تحسي إن الدنيا مش ماشية زي ما إنتِ عايزة تلاقي حاجة حلوة تعوّضك. تستاهلي سنة حلوة يا جنى.`
+  },
+  {
+    title: "Something I Never Said",
+    icon: "💌",
+    caption: "A little confession",
+    heading: "حاجة مقلتهالكش ♡",
+    text: `في تفاصيل صغيرة فيكي أنا فعلًا باخد بالي منها. زي لما تحكيلي عن حاجة حصلت في يومك وتدخلي في تفاصيلها، أو لما تردّي بطريقة تضحكني من غير ما تكوني قاصدة، أو لما نفتح موضوع عادي جدًا ونفضل نتكلم فيه. الحاجات دي يمكن بالنسبالك مواقف عادية وبتعدّي، بس أنا ببقى مبسوط بيها. ومش بقولك الكلام ده عشان تستني مني رد فعل معين، أنا بس حبيت تعرفي إن التفاصيل اللي ممكن متاخديش بالك منها ليها قيمة عندي.`
+  },
+  {
+    title: "One More Surprise",
+    icon: "🦋",
+    caption: "The last little note",
+    heading: "مفاجأة أخيرة ♡",
+    text: `عارفة إيه أكتر حاجة حبيتها في فكرة الموقع ده؟ إني قعدت أفكر في كل تفصيلة فيه، من الألوان للصور للرسائل، وأفضل أغيّر وأظبط لحد ما أحس إنه بقى شبه الحاجة اللي كنت عايز أعملهالك. يمكن لما تفتحيه هتشوفيه مجرد موقع صغير فيه شوية كلام وورد، بس وراه وقت وتفكير، وكل تفصيلة فيه اتحطت عشان تبقى ليكي إنتِ. ويارب لما تخلصي جولتك الصغيرة هنا تكوني ابتسمتي ولو مرة واحدة. عيد ميلاد سعيد يا جنى. ♡`
+  }
+];
+
+const openedLetters = new Set();
+
+// الرسالة الأساسية
+function showLetter() {
+  app.innerHTML = `
+    <section class="page-section">
+      <h2 class="section-title">A Letter For Jana ♡</h2>
+      <p class="section-subtitle">A LITTLE NOTE FROM ME</p>
+
+      <div class="letter-card">
+        <h3 class="letter-heading">عارفة يا جنى،</h3>
+        <p class="letter-text" id="typedMessage"></p>
+        <div class="letter-footer">♡ ✦ ♡</div>
+      </div>
+
+      <button class="action-button" id="gardenBtn">
+        Enter the garden ♡
+      </button>
+    </section>
+  `;
+
+  const output = document.getElementById("typedMessage");
+  const chars = Array.from(mainMessage);
+  let index = 0;
+
+  const typing = setInterval(() => {
+    if (!output.isConnected) {
+      clearInterval(typing);
+      return;
+    }
+
+    output.textContent += chars[index];
+    index++;
+
+    if (index >= chars.length) {
+      clearInterval(typing);
+    }
+  }, 12);
+
+  document.getElementById("gardenBtn").addEventListener("click", showGarden);
+}
+
+// حديقة الأظرف
+function showGarden() {
+  app.innerHTML = `
+    <section class="page-section garden-section">
+      <div class="garden-decor">🌷 🦋 🌸</div>
+
+      <h2 class="section-title">Jana's Little Garden</h2>
+
+      <p class="garden-intro">
+        زرعتلك هنا شوية كلام صغير...
+        افتحي كل ظرف واكتشفي اللي جواه ♡
+      </p>
+
+      <div class="envelope-grid">
+        ${letters.map((letter, index) => `
+          <button
+            class="envelope ${openedLetters.has(index) ? "opened" : ""}"
+            data-letter="${index}"
+          >
+            <span class="envelope-icon">
+              ${openedLetters.has(index) ? "💗" : "✉️"}
+            </span>
+
+            <span class="envelope-title">
+              ${letter.title}
+            </span>
+
+            <span class="envelope-caption">
+              ${openedLetters.has(index) ? "Opened ♡" : letter.caption}
+            </span>
+          </button>
+        `).join("")}
+      </div>
+
+      <div class="garden-bottom">🌼 🌷 🌼</div>
+
+      <p class="garden-progress">
+        ${openedLetters.size} / 3 letters opened
+      </p>
+
+      ${
+        openedLetters.size === 3
+          ? `<p class="final-garden-message">
+               فتحتي كل الأظرف... بس لسه في آخر حاجة ليكي ♡
+             </p>
+             <button class="action-button" id="finishBtn">
+               One Last Thing ♡
+             </button>`
+          : ""
+      }
+    </section>
+  `;
+
+  document.querySelectorAll("[data-letter]").forEach(button => {
+    button.addEventListener("click", () => {
+      openLetter(Number(button.dataset.letter));
+    });
+  });
+
+  const finishBtn = document.getElementById("finishBtn");
+
+  if (finishBtn) {
+    finishBtn.addEventListener("click", showFinal);
+  }
+}
+
+// فتح ظرف
+function openLetter(index) {
+  openedLetters.add(index);
+
+  const letter = letters[index];
+
+  app.innerHTML = `
+    <section class="page-section">
+      <div class="opened-letter">
+        <div class="sparkle">${letter.icon}</div>
+
+        <h2 class="section-title">${letter.title}</h2>
+
+        <h3 class="letter-heading">${letter.heading}</h3>
+
+        <p class="letter-text">${letter.text}</p>
+
+        <div class="letter-footer">♡ ✦ ♡</div>
+      </div>
+
+      <button class="close-letter" id="backBtn">
+        Back to the garden ♡
+      </button>
+    </section>
+  `;
+
+  document.getElementById("backBtn").addEventListener("click", showGarden);
+}
+
+// النهاية
+function showFinal() {
+  app.innerHTML = `
+    <section class="page-section final-section">
+      <div class="sparkle">✦</div>
+
+      <h2 class="final-title">Happy Birthday, Jana ♡</h2>
+
+      <p class="final-message">
+        أتمنى يومك يكون جميل شبهك،
+        وسنتك الجديدة تكون مليانة حاجات حلوة
+        وضحك ونجاحات ولحظات تفضلي فاكرها.
+        <br><br>
+        You deserve all the beautiful things. ♡
+      </p>
+
+      <div class="letter-footer">25 November ♡</div>
+    </section>
+  `;
+
+  startHearts();
+}
+
+// قلوب متحركة
+function startHearts() {
+  const heartInterval = setInterval(() => {
+    if (!document.querySelector(".final-section")) {
+      clearInterval(heartInterval);
+      return;
+    }
+
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.textContent = ["♡", "♥", "✦"][Math.floor(Math.random() * 3)];
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (15 + Math.random() * 20) + "px";
+    heart.style.animationDuration = (4 + Math.random() * 3) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 7000);
+  }, 450);
+}
+
+// زر البداية الأصلي
+document.getElementById("openBtn").addEventListener("click", showLetter);
+
+</script>
+</body>
+</html>
